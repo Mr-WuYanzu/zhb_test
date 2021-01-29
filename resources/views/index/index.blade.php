@@ -23,7 +23,7 @@
             }
         </style>
     </head>
-    <body>
+    <body style="height: 100%">
         <div class="layui-fluid" style="background-color: #ffffff;margin-top: 250px;margin-left: 5%;width: 90%;border-radius:10px 10px;">
             <div class="layui-row">
                 <div style="text-align: center;width: 100%">aaaaa</div>
