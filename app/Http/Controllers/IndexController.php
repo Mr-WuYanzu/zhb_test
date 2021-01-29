@@ -4,10 +4,14 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Config;
+
 class IndexController extends Controller
 {
     public function index(){
-        return view('index.index');
+        $config_model = new Config();
+        $data = $config_model->getInfo(1);
+        return view('index.index',['img'=>$data['value']??'']);
     }
 
     public function details(){
