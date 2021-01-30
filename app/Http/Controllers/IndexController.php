@@ -73,14 +73,14 @@ class IndexController extends Controller
         }
         $auth_code_model = new AuthCode();
         $code_data = $auth_code_model->getInfo($data['phone']);
-        if(empty($code_data)){
-            return response()->json(['code'=>1000,'msg'=>'验证码错误']);
-        }
-        if($code_data){
-            if($code_data['status'] == 2 || $code_data['code'] != $auth_code){
-                return response()->json(['code'=>1000,'msg'=>'验证码错误']);
-            }
-        }
+//        if(empty($code_data)){
+//            return response()->json(['code'=>1000,'msg'=>'验证码错误']);
+//        }
+//        if($code_data){
+//            if($code_data['status'] == 2 || $code_data['code'] != $auth_code){
+//                return response()->json(['code'=>1000,'msg'=>'验证码错误']);
+//            }
+//        }
         $auth_code_model->upd($code_data['id'],['status'=>2]);
         $user_model = new User();
         $res = $user_model->add($data);
