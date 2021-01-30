@@ -146,8 +146,27 @@
                 });
                 $('#submit').click(function () {
 
+                    var _str = $('#text').val();
+                    $('#content').show();
+                    if(_str == ''){
+                        $('#content').hide();
+                        return false;
+                    }
+                    _html = '';
 
-
+                    $.ajax({
+                        url:'/get_specialty?str='+_str,
+                        async:false,
+                        success:function (res) {
+                            if(res.code==200){
+                                for (const item in res.data) {
+                                    _html += '<a href="/details?code='+res.data[item].code+'">'+res.data[item].name+'['+res.data[item].code+']</a><br>';
+                                }
+                            }
+                        }
+                    })
+                    $('#content').html('');
+                    $('#content').append(_html);
                     return false;
                 })
 
