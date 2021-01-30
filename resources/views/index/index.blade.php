@@ -28,7 +28,7 @@
         </style>
     </head>
     <body style="height: 100%">
-        <div class="layui-fluid" style="background-color: #ffffff;margin-top: 250px;margin-left: 5%;width: 90%;border-radius:10px 10px;">
+        <div class="layui-fluid" style="background-color: #ffffff;margin-top: 250px;margin-left: 5%;width: 80%;border-radius:10px 10px;">
             <div class="layui-row">
                 <div style="text-align: center;width: 100%;font-size: 28px">请输入您的专科专业/专业代码</div>
                 <form class="layui-form">
