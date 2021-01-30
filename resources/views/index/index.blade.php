@@ -97,7 +97,7 @@
                             <input type="number" id="auth_code" name="auth_code" required="" lay-verify="required"
                                    autocomplete="off" class="layui-input">
                         </div>
-                        <div class="layui-form-mid layui-word-aux" style="margin-top:15px">
+                        <div class="layui-form-mid layui-word-aux" style="">
                             <span class="x-red map_select">获取验证码</span>
                         </div>
                     </div>
