@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>欢迎页面-X-admin2.2</title>
+        <title>专业报考</title>
         <meta name="renderer" content="webkit">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -49,7 +49,7 @@
                     @foreach($reg_data as $k=>$v)
                     <tr style="height: 50px;">
                         <td style="font-size: 18px;width: 75%">{{$v['title']}}[{{$v['code']}}]</td>
-                        <td style="text-align: right;color: deepskyblue;font-size: 18px;cursor:pointer" class="details" onclick='xadmin.open("{{$v['title']}}[{{$v['code']}}]","/get_school?code={{$v['code']}}",600,800)'>查看招生院校&nbsp;></td>
+                        <td style="text-align: right;color: deepskyblue;font-size: 18px;cursor:pointer" class="details" onclick='xadmin.open("{{$v['title']}}[{{$v['code']}}]","/get_school?code={{$v['code']}}",300,500)'>查看招生院校&nbsp;></td>
                     </tr>
                     @endforeach
                     </tbody>
