@@ -54,7 +54,7 @@
             <div class="layui-row">
                 <form class="layui-form">
                     <div class="layui-form-item">
-                        <label for="username" class="layui-form-label">
+                        <label for="username" class="layui-form-label" style="width: 60px">
                             <span class="x-red">*</span>城市
                         </label>
                         <div class="layui-input-inline" style="width: 50%;padding-left: 10%;padding-top: 20px">
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label for="username" class="layui-form-label">
+                        <label for="username" class="layui-form-label" style="width: 60px">
                             <span class="x-red">*</span>学校
                         </label>
                         <div class="layui-input-inline" style="width: 50%;padding-left: 10%;padding-top: 20px">
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label for="username" class="layui-form-label">
+                        <label for="username" class="layui-form-label" style="width: 60px">
                             <span class="x-red">*</span>年级
                         </label>
                         <div class="layui-input-inline" style="width: 50%;padding-left: 10%;padding-top: 20px">
@@ -81,7 +81,7 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label for="username" class="layui-form-label">
+                        <label for="username" class="layui-form-label" style="width: 60px">
                             <span class="x-red">*</span>手机号
                         </label>
                         <div class="layui-input-inline" style="width: 50%;padding-left: 10%;padding-top: 20px">
@@ -90,7 +90,7 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label for="username" class="layui-form-label">
+                        <label for="username" class="layui-form-label" style="width: 60px">
                             <span class="x-red">*</span>验证码
                         </label>
                         <div class="layui-input-inline" style="width: 50%;padding-left: 10%;padding-top: 20px">
