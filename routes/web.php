@@ -18,3 +18,4 @@ Route::get('/', function () {
 
 Route::get('/index','IndexController@index');
 Route::get('/details','IndexController@details');
+Route::get('/auth_code','IndexController@getAuthCode');

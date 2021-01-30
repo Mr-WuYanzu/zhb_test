@@ -41,6 +41,7 @@
                   </div>
                     <div class="layui-form-item" id="content" style="text-align: center;border: solid 1px #D0D0D0;margin-top: -15px;background-color: #ffffff;width: 80%;margin-left: 10%;padding-top: 20px;display: none">
 
+
                     </div>
                   <div class="layui-form-item" style="text-align: center;width: 100%">
                       <button  class="layui-btn" id="submit" lay-filter="add" style="width: 80%">
@@ -59,7 +60,7 @@
                             <span class="x-red">*</span>城市
                         </label>
                         <div class="layui-input-inline" style="width: 80%;padding-left: 10%;padding-top: 20px">
-                            <input type="text" id="username" name="username" required="" lay-verify="required"
+                            <input type="text" id="city" name="city" required="" lay-verify="required"
                                    autocomplete="off" class="layui-input">
                         </div>
                     </div>
@@ -68,7 +69,7 @@
                             <span class="x-red">*</span>学校
                         </label>
                         <div class="layui-input-inline" style="width: 80%;padding-left: 10%;padding-top: 20px">
-                            <input type="text" id="username" name="username" required="" lay-verify="required"
+                            <input type="text" id="school" name="school" required="" lay-verify="required"
                                    autocomplete="off" class="layui-input">
                         </div>
                     </div>
@@ -77,7 +78,7 @@
                             <span class="x-red">*</span>年级
                         </label>
                         <div class="layui-input-inline" style="width: 80%;padding-left: 10%;padding-top: 20px">
-                            <input type="text" id="username" name="username" required="" lay-verify="required"
+                            <input type="text" id="class" name="class" required="" lay-verify="required"
                                    autocomplete="off" class="layui-input">
                         </div>
                     </div>
@@ -86,8 +87,20 @@
                             <span class="x-red">*</span>手机号
                         </label>
                         <div class="layui-input-inline" style="width: 80%;padding-left: 10%;padding-top: 20px">
-                            <input type="text" id="username" name="username" required="" lay-verify="required"
+                            <input type="number" id="phone" name="phone" required="" lay-verify="required"
                                    autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label for="username" class="layui-form-label">
+                            <span class="x-red">*</span>验证码
+                        </label>
+                        <div class="layui-input-inline" style="width: 60%;padding-left: 10%;padding-top: 20px">
+                            <input type="number" id="auth_code" name="auth_code" required="" lay-verify="required"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux" style="margin-top:15px">
+                            <span class="x-red map_select">点击获取验证码</span>
                         </div>
                     </div>
 
