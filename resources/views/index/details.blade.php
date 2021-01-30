@@ -40,29 +40,24 @@
         <div>
             <img src="/images/loadingpic44.png" alt="" id="back">
         </div>
-        <h3 style="padding-top: 20px;text-align: center;padding-bottom: 10px">123asdasd</h3>
-        <p style="width:100%;border: black 1px solid;"></p>
-        <div style="width: 100%;padding-top: 10px">
-            <table style="width: 100%">
-                <tbody>
+        <div style="width:90%;padding-left: 5%;">
+            <h3 style="padding-top: 20px;text-align: center;padding-bottom: 10px">报考信息</h3>
+            <p style="width:100%;border: black 1px solid;"></p>
+            <div style="width: 100%;padding-top: 10px">
+                <table style="width: 100%">
+                    <tbody>
                     <tr style="height: 50px;">
-                        <td style="font-size: 18px">123</td>
-                        <td style="text-align: right;color: deepskyblue;font-size: 18px;cursor:pointer" class="details" code="12321">查看详情</td>
+                        <td style="font-size: 18px;width: 75%">123</td>
+                        <td style="text-align: right;color: deepskyblue;font-size: 18px;cursor:pointer" class="details" code="12321">查看招生院校&nbsp;></td>
                     </tr>
-                    <tr style="height: 50px;">
-                        <td style="font-size: 18px">123</td>
-                        <td style="text-align: right;color: deepskyblue;font-size: 18px;cursor:pointer" class="details" code="12321">查看详情</td>
-                    </tr>
-                    <tr style="height: 50px;">
-                        <td style="font-size: 18px">123</td>
-                        <td style="text-align: right;color: deepskyblue;font-size: 18px;cursor:pointer" class="details" code="12321">查看详情</td>
-                    </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
+
     </div>
-    <div style="width: 100%;height:50px;position: fixed;bottom: 1px">
-        <p>123123 </p>
+    <div style="width: 100%;height:50px;position: fixed;bottom: 10px;" align="center">
+        <img src="/images/loadingpic44.png" alt="" style="height: 50px;width: 150px;">
     </div>
 
         <script>

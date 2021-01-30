@@ -18,20 +18,25 @@
             <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
         <style>
+            /*body{*/
+            /*    background: url("/images/loadingpic44.png");*/
+            /*}*/
             body{
-                background: url("/images/loadingpic44.png");
+                position:fixed;
+                background: url("{{$img}}") no-repeat;
+                background-size: cover;
             }
         </style>
     </head>
     <body style="height: 100%">
         <div class="layui-fluid" style="background-color: #ffffff;margin-top: 250px;margin-left: 5%;width: 90%;border-radius:10px 10px;">
             <div class="layui-row">
-                <div style="text-align: center;width: 100%">aaaaa</div>
+                <div style="text-align: center;width: 100%;font-size: 28px">请输入您的专科专业/专业代码</div>
                 <form class="layui-form">
                   <div class="layui-form-item">
-                      <div class="layui-input-inline" style="width: 80%;padding-left: 10%;padding-top: 20px">
+                      <div class="layui-input-inline" style="width: 80%;padding-left: 10%;padding-top: 38px">
                           <input type="text" id="text" name="text" required="" lay-verify="required"
-                          autocomplete="off" class="layui-input">
+                          autocomplete="off" class="layui-input" style="height: 40px" placeholder="请输入专业全称/专业代码">
                       </div>
                   </div>
                     <div class="layui-form-item" id="content" style="text-align: center;border: solid 1px #D0D0D0;margin-top: -15px;background-color: #ffffff;width: 80%;margin-left: 10%;padding-top: 20px;display: none">
@@ -39,18 +44,47 @@
                     </div>
                   <div class="layui-form-item" style="text-align: center;width: 100%">
                       <button  class="layui-btn" id="submit" lay-filter="add" style="width: 80%">
-                          增加
+                          查询
                       </button>
                   </div>
               </form>
             </div>
         </div>
 
-        <div class="layui-fluid" id="check" style="position:relative;top:-390px;background-color: #00F7DE;margin-top: 250px;margin-left: 10%;width: 80%;border-radius:10px 10px;display: none">
+        <div class="layui-fluid" id="check" style="position:relative;top:-450px;border:solid 1px #1b1e21;background-color: #ffffff;margin-top: 250px;margin-left: 10%;width: 80%;border-radius:10px 10px;display: none">
             <div class="layui-row">
-                <div style="text-align: center;width: 100%">aaaaa</div>
                 <form class="layui-form">
                     <div class="layui-form-item">
+                        <label for="username" class="layui-form-label">
+                            <span class="x-red">*</span>城市
+                        </label>
+                        <div class="layui-input-inline" style="width: 80%;padding-left: 10%;padding-top: 20px">
+                            <input type="text" id="username" name="username" required="" lay-verify="required"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label for="username" class="layui-form-label">
+                            <span class="x-red">*</span>学校
+                        </label>
+                        <div class="layui-input-inline" style="width: 80%;padding-left: 10%;padding-top: 20px">
+                            <input type="text" id="username" name="username" required="" lay-verify="required"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label for="username" class="layui-form-label">
+                            <span class="x-red">*</span>年级
+                        </label>
+                        <div class="layui-input-inline" style="width: 80%;padding-left: 10%;padding-top: 20px">
+                            <input type="text" id="username" name="username" required="" lay-verify="required"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label for="username" class="layui-form-label">
+                            <span class="x-red">*</span>手机号
+                        </label>
                         <div class="layui-input-inline" style="width: 80%;padding-left: 10%;padding-top: 20px">
                             <input type="text" id="username" name="username" required="" lay-verify="required"
                                    autocomplete="off" class="layui-input">
@@ -68,6 +102,10 @@
         <script>
             layui.use(['form', 'layer'],
             function() {
+                var login_data = localStorage.getItem('login');
+                if(login_data == null){
+                    $('#check').show();
+                }
                 $("#text").bind("input propertychange change",function(event){
                     $('#content').show();
                     var _text = $(this).val();
