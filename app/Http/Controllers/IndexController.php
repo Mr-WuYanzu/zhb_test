@@ -71,7 +71,7 @@ class IndexController extends Controller
         $user_model = new User();
         $res = $user_model->add($data);
         if($res){
-            return response()->json(['code'=>200,'msg'=>'success']);
+            return response()->json(['code'=>200,'msg'=>'success','data'=>$res]);
         }else{
             return response()->json(['code'=>1000,'msg'=>'系统错误']);
         }

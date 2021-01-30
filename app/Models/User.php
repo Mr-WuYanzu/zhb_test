@@ -12,7 +12,7 @@ class User extends Model
     public $timestamps;
 
     public function add($data){
-        return $this->query()->insert($data);
+        return $this->query()->insertGetId($data);
     }
 }
 
