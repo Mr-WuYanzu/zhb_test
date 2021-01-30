@@ -35,21 +35,23 @@
             }
         </style>
     </head>
-    <body style="background-color: #ffffff;height: 100%">
+    <body style="background-color: #ffffff;">
     <div style="height: 100%">
         <div>
             <img src="/images/loadingpic44.png" alt="" id="back">
         </div>
         <div style="width:90%;padding-left: 5%;">
-            <h3 style="padding-top: 20px;text-align: center;padding-bottom: 10px">报考信息</h3>
+            <h3 style="padding-top: 20px;text-align: center;padding-bottom: 10px">{{$spe_data['name']??''}}报考信息</h3>
             <p style="width:100%;border: black 1px solid;"></p>
             <div style="width: 100%;padding-top: 10px">
                 <table style="width: 100%">
                     <tbody>
+                    @foreach($reg_data as $k=>$v)
                     <tr style="height: 50px;">
-                        <td style="font-size: 18px;width: 75%">123</td>
-                        <td style="text-align: right;color: deepskyblue;font-size: 18px;cursor:pointer" class="details" code="12321">查看招生院校&nbsp;></td>
+                        <td style="font-size: 18px;width: 75%">{{$v['title']}}[{{$v['code']}}]</td>
+                        <td style="text-align: right;color: deepskyblue;font-size: 18px;cursor:pointer" class="details" onclick='xadmin.open("{{$v['title']}}[{{$v['code']}}]","/get_school?code={{$v['code']}}",600,800)'>查看招生院校&nbsp;></td>
                     </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>

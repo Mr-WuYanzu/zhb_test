@@ -11,7 +11,18 @@ class Register extends Model
     public $timestamps;
 
     public function getInfoByCodes($codes){
+        if(empty($codes)){
+            return [];
+        }
         $data = $this->query()->whereIn('code',$codes)->get();
+        if($data){
+            return $data->toArray();
+        }
+        return [];
+    }
+
+    public function getInfoByCode($code){
+        $data = $this->query()->where('code','=',$code)->first();
         if($data){
             return $data->toArray();
         }

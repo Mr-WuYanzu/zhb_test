@@ -72,12 +72,14 @@
                         </div>
                     </div>
                     <div class="layui-form-item" style="padding-left: 10%;padding-top: 20px">
-                        <label for="username" class="layui-form-label" style="width: 60px">
-                            <span class="x-red">*</span>年级
-                        </label>
+                        <label class="layui-form-label"  style="width: 60px"><span class="x-red">*</span>年级</label>
                         <div class="layui-input-inline" style="width: 50%;">
-                            <input type="text" id="class" name="class" required="" lay-verify="required"
-                                   autocomplete="off" class="layui-input">
+                            <select name="class" lay-verify="required">
+                                <option value="一年级">一年级</option>
+                                <option value="二年级">二年级</option>
+                                <option value="三年级">三年级</option>
+                                <option value="四年级">四年级</option>
+                            </select>
                         </div>
                     </div>
                     <div class="layui-form-item" style="padding-left: 10%;padding-top: 20px">
@@ -98,13 +100,13 @@
                                    autocomplete="off" class="layui-input">
                         </div>
                         <div class="layui-form-mid layui-word-aux" style="">
-                            <span class="x-red map_select">获取验证码</span>
+                            <span class="map_select" style="color:#007DDB">获取验证码</span>
                         </div>
                     </div>
 
                     <div class="layui-form-item" style="text-align: center;width: 100%">
-                        <button  class="layui-btn" lay-filter="add" lay-submit="" style="width: 80%">
-                            增加
+                        <button  class="layui-btn" lay-filter="login" lay-submit="" style="width: 80%">
+                            验证
                         </button>
                     </div>
                 </form>
@@ -113,18 +115,33 @@
         <script>
             layui.use(['form', 'layer'],
             function() {
+
                 var login_data = localStorage.getItem('login');
                 if(login_data == null){
                     $('#check').show();
                 }
-                $("#text").bind("input propertychange change",function(event){
+                $("#text").bind("input propertychange",function(event){
+                    var _str = $('#text').val();
                     $('#content').show();
                     var _text = $(this).val();
                     if(_text == ''){
                         $('#content').hide();
                         return false;
                     }
-                    _html = '<a href="https://www.baidu.com">'+_text+'</a><br>'
+                    _html = '';
+
+                    $.ajax({
+                        url:'/get_specialty?str='+_str,
+                        async:false,
+                        success:function (res) {
+                            if(res.code==200){
+                                for (const item in res.data) {
+                                    _html += '<a href="/details?code='+res.data[item].code+'">'+res.data[item].name+'['+res.data[item].code+']</a><br>';
+                                }
+                            }
+                        }
+                    })
+                    $('#content').html('');
                     $('#content').append(_html);
                 });
                 $('#submit').click(function () {
@@ -133,6 +150,65 @@
 
                     return false;
                 })
+
+                $(document).on('click','.map_select',function () {
+                    var _text = $(this).text();
+                    if(_text!='获取验证码'){
+                        return false;
+                    }
+                    var phone = $('#phone').val();
+                    if(phone==''){
+                        layer.msg('手机号不能为空');
+                        return false;
+                    }
+                    $.ajax({
+                        url:'/auth_code?phone='+phone,
+                        success:function (res) {
+                            if(res.code==200){
+                                layer.msg('发送成功');
+                                auth_code();
+                            }else{
+                                layer.msg(res.msg);
+                            }
+                        }
+                    })
+                })
+
+                var form = layui.form;
+
+                //监听提交
+                form.on('submit(login)', function(data){
+                    var _check = $('#check');
+                    $.ajax({
+                        url:'/login',
+                        type:'post',
+                        data:data.field,
+                        success:function (res) {
+                            if(res.code==200){
+                                localStorage.setItem('login',res.data);
+                                _check.hide();
+                            }
+                        }
+                    })
+                    return false;
+                });
+
+                function auth_code() {
+                    var oBtn = $('.map_select')
+                    var time = 60;
+                    var timer = null;
+                    oBtn.text('重新发送'+time);
+                    timer = setInterval(function(){
+                        // 定时器到底了 兄弟们回家啦
+                        if(time == 1){
+                            clearInterval(timer);
+                            oBtn.text('获取验证码');
+                        }else{
+                            time--;
+                            oBtn.text('重新发送'+time);
+                        }
+                    }, 1000)
+                }
             });
 
 

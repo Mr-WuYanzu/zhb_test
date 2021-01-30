@@ -8,6 +8,8 @@ use App\Models\AuthCode;
 use App\Models\Config;
 use App\Models\Register;
 use App\Models\RS;
+use App\Models\School;
+use App\Models\ScReg;
 use App\Models\Specialty;
 use App\Models\User;
 
@@ -52,7 +54,7 @@ class IndexController extends Controller
             $res = $auth_code->add(['phone'=>$phone,'code'=>$code]);
         }
         if($res){
-            return response()->json(['code'=>200,'msg'=>'success','data'=>$code]);
+            return response()->json(['code'=>200,'msg'=>'success']);
         }else{
             return response()->json(['code'=>1000,'msg'=>'系统错误']);
         }
@@ -65,9 +67,21 @@ class IndexController extends Controller
             'class' => request()->post('class'),
             'phone' => request()->post('phone'),
         ];
+        $auth_code = request()->post('auth_code');
         if(empty($data['phone']) || empty($data['city']) || empty($data['school']) || empty($data['class'])){
             return response()->json(['code'=>1000,'msg'=>'参数错误']);
         }
+        $auth_code_model = new AuthCode();
+        $code_data = $auth_code_model->getInfo($data['phone']);
+        if(empty($code_data)){
+            return response()->json(['code'=>1000,'msg'=>'验证码错误']);
+        }
+        if($code_data){
+            if($code_data['status'] == 2 || $code_data['code'] != $auth_code){
+                return response()->json(['code'=>1000,'msg'=>'验证码错误']);
+            }
+        }
+        $auth_code_model->upd($code_data['id'],['status'=>2]);
         $user_model = new User();
         $res = $user_model->add($data);
         if($res){
@@ -85,5 +99,26 @@ class IndexController extends Controller
         $specialty_model = new Specialty();
         $data = $specialty_model->getInfoByName($str);
         return response()->json(['code'=>200,'msg'=>'success','data'=>$data]);
+    }
+
+    public function getSchool(){
+        $code = request()->get('code');
+        #获取报考信息
+        $reg_model = new Register();
+        $reg_data = $reg_model->getInfoByCode($code);
+        $data = [];
+        if($reg_data){
+            #获取报考和院校关联信息
+            $sc_reg_model = new ScReg();
+            $data = $sc_reg_model->getListByCode($code);
+            $school_ids = array_column($data,'sc_id');
+            $school_model = new School();
+            $school_data = $school_model->getInfoByIds($school_ids);
+            $sc_name = array_column($school_data,'name','id');
+            foreach ($data as $k=>$v){
+                $data[$k]['sc_name'] = $sc_name[$v['sc_id']]??'';
+            }
+        }
+        return view('index.school',['data'=>$data]);
     }
 }

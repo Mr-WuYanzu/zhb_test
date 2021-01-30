@@ -13,10 +13,10 @@ class Specialty extends Model
 
     public function getInfoByName($name){
         $where = [
-            ['name','like','%'.$name.'%'],
-            ['status','=',1]
+            ['name','like','%'.$name.'%','OR'],
+            ['code','like','%'.$name.'%','OR'],
         ];
-        $data = $this->query()->where($where)->get();
+        $data = $this->query()->where('status','=',1)->where($where)->get();
         if($data){
             return $data->toArray();
         }
