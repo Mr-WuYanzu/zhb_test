@@ -57,7 +57,7 @@
                         <label for="username" class="layui-form-label" style="width: 60px">
                             <span class="x-red">*</span>城市
                         </label>
-                        <div class="layui-input-inline" style="width: 50%;padding-left: 10%;padding-top: 20px">
+                        <div class="layui-input-inline" style="width: 50%;">
                             <input type="text" id="city" name="city" required="" lay-verify="required"
                                    autocomplete="off" class="layui-input">
                         </div>
@@ -66,7 +66,7 @@
                         <label for="username" class="layui-form-label" style="width: 60px">
                             <span class="x-red">*</span>学校
                         </label>
-                        <div class="layui-input-inline" style="width: 50%;padding-left: 10%;padding-top: 20px">
+                        <div class="layui-input-inline" style="width: 50%;">
                             <input type="text" id="school" name="school" required="" lay-verify="required"
                                    autocomplete="off" class="layui-input">
                         </div>
@@ -75,7 +75,7 @@
                         <label for="username" class="layui-form-label" style="width: 60px">
                             <span class="x-red">*</span>年级
                         </label>
-                        <div class="layui-input-inline" style="width: 50%;padding-left: 10%;padding-top: 20px">
+                        <div class="layui-input-inline" style="width: 50%;">
                             <input type="text" id="class" name="class" required="" lay-verify="required"
                                    autocomplete="off" class="layui-input">
                         </div>
@@ -93,7 +93,7 @@
                         <label for="username" class="layui-form-label" style="width: 60px">
                             <span class="x-red">*</span>验证码
                         </label>
-                        <div class="layui-input-inline" style="width: 50%;padding-left: 10%;padding-top: 20px">
+                        <div class="layui-input-inline" style="width: 50%;">
                             <input type="number" id="auth_code" name="auth_code" required="" lay-verify="required"
                                    autocomplete="off" class="layui-input">
                         </div>
