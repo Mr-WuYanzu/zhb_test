@@ -39,7 +39,7 @@
                           autocomplete="off" class="layui-input" style="height: 40px" placeholder="请输入专业全称/专业代码">
                       </div>
                   </div>
-                    <div class="layui-form-item" id="content" style="text-align: center;border: solid 1px #D0D0D0;margin-top: -15px;background-color: #ffffff;width: 80%;margin-left: 10%;padding-top: 20px;display: none">
+                    <div class="layui-form-item" id="content" style="font-size:18px;text-align: center;border: solid 1px #D0D0D0;margin-top: -15px;background-color: #ffffff;width: 80%;margin-left: 10%;padding-top: 20px;display: none">
 
                     </div>
                   <div class="layui-form-item" style="text-align: center;width: 100%">
