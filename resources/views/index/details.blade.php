@@ -37,9 +37,9 @@
     </head>
     <body style="background-color: #ffffff;">
     <div style="height: 100%">
-        <div>
-            <img src="/images/loadingpic44.png" alt="" id="back">
-        </div>
+{{--        <div>--}}
+{{--            <img src="/images/loadingpic44.png" alt="" id="back">--}}
+{{--        </div>--}}
         <div style="width:90%;padding-left: 5%;">
             <h3 style="padding-top: 20px;text-align: center;padding-bottom: 10px">{{$spe_data['name']??''}}报考信息</h3>
             <p style="width:100%;border: black 1px solid;"></p>
@@ -58,9 +58,9 @@
         </div>
 
     </div>
-    <div style="width: 100%;height:50px;position: fixed;bottom: 10px;" align="center">
-        <img src="/images/loadingpic44.png" alt="" style="height: 50px;width: 150px;">
-    </div>
+{{--    <div style="width: 100%;height:50px;position: fixed;bottom: 10px;" align="center">--}}
+{{--        <img src="/images/loadingpic44.png" alt="" style="height: 50px;width: 150px;">--}}
+{{--    </div>--}}
 
         <script>
             layui.use(['form', 'layer'],
