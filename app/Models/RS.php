@@ -21,4 +21,29 @@ class RS extends Model
         }
         return [];
     }
+
+    public function getInfo($sp_code,$reg_code){
+        $where = [
+            ['sp_code','=',$sp_code],
+            ['reg_code','=',$reg_code]
+        ];
+        $data = $this->query()->where($where)->first();
+        if($data){
+            return $data->toArray();
+        }
+        return [];
+    }
+
+    public function add($data){
+        return $this->query()->insert($data);
+    }
+
+    public function upd($id,$data){
+        return $this->query()->where('id','=',$id)->update($data);
+    }
+
+    public function del($id)
+    {
+        return $this->query()->where('id', '=', $id)->delete();
+    }
 }

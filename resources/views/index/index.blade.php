@@ -23,7 +23,8 @@
             /*}*/
             body{
                 position:fixed;
-                background: url("{{$img}}") no-repeat;
+                {{--background: url("{{$img}}") no-repeat;--}}
+                background-color:#1E9FFF;
             }
         </style>
     </head>

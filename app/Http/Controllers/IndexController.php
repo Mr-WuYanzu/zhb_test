@@ -66,6 +66,7 @@ class IndexController extends Controller
             'school' => request()->post('school'),
             'class' => request()->post('class'),
             'phone' => request()->post('phone'),
+            'add_time' => time()
         ];
         $auth_code = request()->post('auth_code');
         if(empty($data['phone']) || empty($data['city']) || empty($data['school']) || empty($data['class'])){
