@@ -24,7 +24,7 @@
             body{
                 position:fixed;
                 {{--background: url("{{$img}}") no-repeat;--}}
-                background-color:#1E9FFF;
+                background-color:#6c757d;
             }
         </style>
     </head>
