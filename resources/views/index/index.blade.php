@@ -43,7 +43,7 @@
 
                     </div>
                   <div class="layui-form-item" style="text-align: center;width: 100%">
-                      <button  class="layui-btn" id="submit" lay-filter="add" style="width: 80%">
+                      <button  class="layui-btn" id="submit" lay-filter="add" style="width: 80%;font-size: 23px">
                           查询
                       </button>
                   </div>
