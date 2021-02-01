@@ -36,7 +36,7 @@
                   <div class="layui-form-item">
                       <div class="layui-input-inline" style="width: 80%;padding-left: 10%;padding-top: 38px">
                           <input type="text" id="text" name="text" required="" lay-verify="required"
-                          autocomplete="off" class="layui-input" style="height: 40px" placeholder="请输入专业全称/专业代码">
+                          autocomplete="off" class="layui-input" style="height: 50px" placeholder="请输入专业全称/专业代码">
                       </div>
                   </div>
                     <div class="layui-form-item" id="content" style="font-size:18px;text-align: center;border: solid 1px #D0D0D0;margin-top: -15px;background-color: #ffffff;width: 80%;margin-left: 10%;padding-top: 20px;display: none">
@@ -113,6 +113,11 @@
                 </form>
             </div>
         </div>
+
+                <div>
+                    <h3>山东微派网络科技有限公司</h3>
+                    <h3>联系电话：18396839126</h3>
+                </div>
         <script>
             layui.use(['form', 'layer'],
             function() {
