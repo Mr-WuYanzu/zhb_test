@@ -116,7 +116,7 @@
 
             <div style="width: 100%;height:50px;position: fixed;bottom: 10px;" align="center">
                 <h3 style="color: white">山东微派网络科技有限公司</h3>
-                <h3 style="color: white">联系电话：18396839126</h3>
+                <h3 style="color: white">联系电话：<a href="tel:18396839126" style="color: #00FFFF">18396839126</a></h3>
             </div>
         <script>
             layui.use(['form', 'layer'],
@@ -124,7 +124,7 @@
 
                 var login_data = localStorage.getItem('login');
                 if(login_data == null){
-                    // $('#check').show();
+                    $('#check').show();
                 }
                 $("#text").bind("input propertychange",function(event){
                     var _str = $('#text').val();
