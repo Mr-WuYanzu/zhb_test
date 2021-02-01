@@ -27,6 +27,7 @@ class VerifyCsrfToken extends Middleware
         '/admin/password_add_do',
         '/admin/login_do',
         '/admin/link_reg_add',
-        '/admin/school_link_reg_add'
+        '/admin/school_link_reg_add',
+        '/admin/upload_img'
     ];
 }

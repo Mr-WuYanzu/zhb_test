@@ -38,6 +38,8 @@ Route::get('/admin/school_check_reg','Admin\controller\Index@school_check_reg')-
 Route::get('/admin/school_check_reg_del','Admin\controller\Index@school_check_reg_del')->middleware('checkLogin');
 Route::get('/admin/school_link_reg','Admin\controller\Index@school_link_reg')->middleware('checkLogin');
 Route::post('/admin/school_link_reg_add','Admin\controller\Index@school_link_reg_add')->middleware('checkLogin');
+Route::get('/admin/back_ground_img','Admin\controller\Index@backGroundImg')->middleware('checkLogin');
+Route::post('/admin/upload_img','Admin\controller\Index@upload_img')->middleware('checkLogin');
 
 Route::get('/admin/reg_list','Admin\controller\Index@reg_list')->middleware('checkLogin');
 Route::get('/admin/reg_add','Admin\controller\Index@reg_add')->middleware('checkLogin');

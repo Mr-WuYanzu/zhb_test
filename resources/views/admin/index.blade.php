@@ -73,6 +73,11 @@
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>修改密码</cite></a>
                             </li>
+                            <li>
+                                <a onclick="xadmin.add_tab('修改背景图片','/admin/back_ground_img')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>修改背景图片</cite></a>
+                            </li>
                         </ul>
                     </li>
                 </ul>

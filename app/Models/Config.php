@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Config extends Model
 {
     protected $table = 'config';
+    public $timestamps;
 
     public function getInfo($type){
         $where = [];
@@ -20,5 +21,9 @@ class Config extends Model
             return $data->toArray();
         }
         return $data;
+    }
+
+    public function updateByType($type,$data){
+        return $this->query()->where('type','=',$type)->update($data);
     }
 }

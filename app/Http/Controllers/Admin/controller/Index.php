@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Admin\controller;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
+use App\Models\Config;
 use App\Models\Register;
 use App\Models\RS;
 use App\Models\School;
@@ -387,5 +388,36 @@ class Index extends Controller
         }else{
             return response()->json(['code'=>1000,'msg'=>'系统错误']);
         }
+    }
+
+    /**
+     * 修改背景图片页面
+     */
+    public function backGroundImg(){
+        $config_model = new Config();
+        $data = $config_model->getInfo(1);
+        return view('admin.background_add',['img'=>$data['value']??'']);
+    }
+
+    /**
+     * 图片上传
+     */
+    public function upload_img(){
+        $file = $_FILES['file'];
+        if(empty($file)){
+            return response()->json(['code'=>1000,'msg'=>'请选择文件上传']);
+        }
+        $type = explode('/',$file['type'])[1]??'png';
+        $content = file_get_contents($file['tmp_name']);
+        $file_name = md5(microtime()).'.'.$type;
+        $data = file_put_contents(__DIR__.'/../../../../../public/images/'.$file_name,$content);
+        if($data){
+            $config_model = new Config();
+            $res = $config_model->updateByType(1,['value'=>'/images/'.$file_name]);
+            if($res){
+                return response()->json(['code'=>200,'msg'=>'上传成功']);
+            }
+        }
+        return response()->json(['code'=>1000,'msg'=>'系统错误']);
     }
 }
