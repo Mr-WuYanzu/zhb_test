@@ -22,7 +22,7 @@
             /*    background: url("/images/loadingpic44.png");*/
             /*}*/
 
-            html,body{height: 100%;width: 100%;min-height:800px}
+            html,body{height: 100%;width: 100%;}
             body{
                 background: url("{{$img}}") no-repeat;
                 width:100%;
@@ -129,6 +129,7 @@
         <script>
             var hight = document.body.clientHeight;
             $('body').attr({style: 'min-height: '+hight+'px'});
+            $('html').attr({style: 'min-height: '+hight+'px'});
 
             layui.use(['form', 'layer'],
             function() {
