@@ -65,7 +65,7 @@
                         <label class="layui-form-label"  style="width: 60px"><span class="x-red">*</span>城市</label>
                         <div class="layui-input-inline" style="width: 50%;">
                             <select name="city" lay-verify="required" lay-filter="city" id="city">
-                                <option value="">请选择</option>
+                                <option value="">请选择学校所在地</option>
                                 @foreach($city_data as $k=>$v)
                                 <option value="{{$v['name']}}" _id="{{$v['id']}}">{{$v['name']}}</option>
                                 @endforeach
@@ -76,7 +76,7 @@
                         <label class="layui-form-label"  style="width: 60px"><span class="x-red">*</span>学校</label>
                         <div class="layui-input-inline" style="width: 50%;">
                             <select name="school" lay-verify="required" id="school">
-                                <option value="">请选择</option>
+                                <option value=""> </option>
                             </select>
                         </div>
                     </div>
@@ -84,10 +84,9 @@
                         <label class="layui-form-label"  style="width: 60px"><span class="x-red">*</span>年级</label>
                         <div class="layui-input-inline" style="width: 50%;">
                             <select name="class" lay-verify="required">
-                                <option value="一年级">大学一年级</option>
-                                <option value="二年级">大学二年级</option>
-                                <option value="三年级">大学三年级</option>
-                                <option value="四年级">大学四年级</option>
+                                <option value="">请选择年级</option>
+                                <option value="2019级">2019级</option>
+                                <option value="2020级">2020级</option>
                             </select>
                         </div>
                     </div>
@@ -155,10 +154,6 @@
                             }
                         }
                     })
-                    console.log(_html)
-                    if(_html == ''){
-                        _html = '<option value="">请选择</option>';
-                    }
 
                     $('#school').html('');
                     $('#school').append(_html);

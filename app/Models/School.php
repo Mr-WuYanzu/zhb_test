@@ -41,7 +41,7 @@ class School extends Model
         if($c_id){
             $where[] = ['c_id','=',$c_id];
         }
-        $data  = $this->query()->where($where)->get();
+        $data  = $this->query()->where($where)->orderBy('sort','desc')->get();
         return $data;
     }
 
