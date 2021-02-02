@@ -37,7 +37,7 @@
     <body>
         <div class="layui-fluid" style="background-color: #ffffff;margin-top: 250px;margin-left: 5%;width: 85%;border-radius:10px 10px;">
             <div class="layui-row">
-                <div style="text-align: center;width: 100%;font-size: 23px">请输入您的专科专业/专业代码</div>
+                <div style="text-align: center;width: 100%;font-size: 18px">请输入您的专科专业/专业代码</div>
                 <form class="layui-form">
                   <div class="layui-form-item">
                       <div class="layui-input-inline" style="width: 80%;padding-left: 10%;padding-top: 38px">
@@ -49,7 +49,7 @@
 
                     </div>
                   <div class="layui-form-item" style="text-align: center;width: 100%">
-                      <button  class="layui-btn" id="submit" lay-filter="add" style="width: 80%;font-size: 20px">
+                      <button  class="layui-btn" id="submit" lay-filter="add" style="width: 80%;font-size: 18px">
                           查询
                       </button>
                   </div>
