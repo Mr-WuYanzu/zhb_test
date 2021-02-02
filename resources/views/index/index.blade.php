@@ -113,7 +113,7 @@
                     </div>
 
                     <div class="layui-form-item" style="text-align: center;width: 100%">
-                        <button  class="layui-btn" lay-filter="login" lay-submit="" style="width: 80%">
+                        <button  class="layui-btn" lay-filter="login" lay-submit="" style="width: 80%;background-color: #1E9FFF">
                             验证
                         </button>
                     </div>
