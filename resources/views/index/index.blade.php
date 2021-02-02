@@ -127,6 +127,12 @@
                 <h2 style="color: white">联系电话：<a href="tel:18396839126" style="color: #00FFFF">18396839126</a></h2>
             </div>
         <script>
+
+            var h1 = $('body').height();
+            $(window).resize(function() {
+                $('body').height(h1);
+            });
+
             layui.use(['form', 'layer'],
             function() {
                 var form = layui.form;
