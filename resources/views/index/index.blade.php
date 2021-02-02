@@ -22,19 +22,19 @@
             /*    background: url("/images/loadingpic44.png");*/
             /*}*/
 
-            html,body{height: 100%;width: 100%;margin:0;padding:0;}
+            html,body{height: 100%;width: 100%;}
             body{
                 background: url("{{$img}}") no-repeat;
                 width:100%;
                 height:100%;
-                background-size:100% 100%;
+                background-size: 112% 114% !important;
                 position:absolute;
                 filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='{{$img}}',sizingMethod='scale');
                 background-color:#6c757d;
             }
         </style>
     </head>
-    <body style="height: 100%">
+    <body>
         <div class="layui-fluid" style="background-color: #ffffff;margin-top: 250px;margin-left: 5%;width: 85%;border-radius:10px 10px;">
             <div class="layui-row">
                 <div style="text-align: center;width: 100%;font-size: 28px">请输入您的专科专业/专业代码</div>
@@ -61,12 +61,11 @@
             <div class="layui-row">
                 <form class="layui-form">
                     <div class="layui-form-item" style="padding-left: 10%;padding-top: 20px">
-                        <label for="username" class="layui-form-label" style="width: 60px">
-                            <span class="x-red">*</span>城市
-                        </label>
+                        <label class="layui-form-label"  style="width: 60px"><span class="x-red">*</span>城市</label>
                         <div class="layui-input-inline" style="width: 50%;">
-                            <input type="text" id="city" name="city" required="" lay-verify="required"
-                                   autocomplete="off" class="layui-input">
+                            <select name="class" lay-verify="required">
+                                <option value="一年级">一年级</option>
+                            </select>
                         </div>
                     </div>
                     <div class="layui-form-item" style="padding-left: 10%;padding-top: 20px">
