@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\AuthCode;
+use App\Models\City;
 use App\Models\Config;
 use App\Models\Register;
 use App\Models\RS;
@@ -18,7 +19,10 @@ class IndexController extends Controller
     public function index(){
         $config_model = new Config();
         $data = $config_model->getInfo(1);
-        return view('index.index',['img'=>$data['value']??'']);
+        #获取城市
+        $city_model = new City();
+        $city_data = $city_model->getInfo();
+        return view('index.index',['img'=>$data['value']??'','city_data'=>$city_data]);
     }
 
     public function details(){
@@ -121,5 +125,12 @@ class IndexController extends Controller
             }
         }
         return view('index.school',['data'=>$data]);
+    }
+
+    public function getSchoolList(){
+        $city_id = request()->get('city_id');
+        $school_model = new School();
+        $data = $school_model->getInfo($city_id);
+        return response()->json(['code'=>200,'msg'=>'success','data'=>$data]);
     }
 }

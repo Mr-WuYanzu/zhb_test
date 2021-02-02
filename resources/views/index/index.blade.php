@@ -63,30 +63,30 @@
                     <div class="layui-form-item" style="padding-left: 10%;padding-top: 20px">
                         <label class="layui-form-label"  style="width: 60px"><span class="x-red">*</span>城市</label>
                         <div class="layui-input-inline" style="width: 50%;">
-                            <select name="class" lay-verify="required">
+                            <select name="city" lay-verify="required" lay-filter="city" id="city">
+                                <option value="">请选择</option>
                                 @foreach($city_data as $k=>$v)
-                                <option value="{{$v['name']}}">{{$v['name']}}</option>
+                                <option value="{{$v['name']}}" _id="{{$v['id']}}">{{$v['name']}}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="layui-form-item" style="padding-left: 10%;padding-top: 20px">
-                        <label for="username" class="layui-form-label" style="width: 60px">
-                            <span class="x-red">*</span>学校
-                        </label>
+                        <label class="layui-form-label"  style="width: 60px"><span class="x-red">*</span>学校</label>
                         <div class="layui-input-inline" style="width: 50%;">
-                            <input type="text" id="school" name="school" required="" lay-verify="required"
-                                   autocomplete="off" class="layui-input">
+                            <select name="school" lay-verify="required" id="school">
+                                <option value="">请选择</option>
+                            </select>
                         </div>
                     </div>
                     <div class="layui-form-item" style="padding-left: 10%;padding-top: 20px">
                         <label class="layui-form-label"  style="width: 60px"><span class="x-red">*</span>年级</label>
                         <div class="layui-input-inline" style="width: 50%;">
                             <select name="class" lay-verify="required">
-                                <option value="一年级">一年级</option>
-                                <option value="二年级">二年级</option>
-                                <option value="三年级">三年级</option>
-                                <option value="四年级">四年级</option>
+                                <option value="一年级">大学一年级</option>
+                                <option value="二年级">大学二年级</option>
+                                <option value="三年级">大学三年级</option>
+                                <option value="四年级">大学四年级</option>
                             </select>
                         </div>
                     </div>
@@ -128,11 +128,38 @@
         <script>
             layui.use(['form', 'layer'],
             function() {
-
+                var form = layui.form;
                 var login_data = localStorage.getItem('login');
                 if(login_data == null){
                     $('#check').show();
                 }
+
+                form.on('select(city)', function(data){
+                    var _id = $("#city").find("option:selected").attr("_id");
+                    var _html = '';
+                    $.ajax({
+                        url:'/admin/get_school_list?city_id='+_id,
+                        dataType:'json',
+                        async:false,
+                        success:function (res) {
+                            console.log(res)
+                            if(res.code==200){
+                                for (const item in res.data) {
+                                    _html += '<option value="'+res.data[item].name+'">'+res.data[item].name+'</option>';
+                                }
+                            }
+                        }
+                    })
+                    console.log(_html)
+                    if(_html == ''){
+                        _html = '<option value="">请选择</option>';
+                    }
+
+                    $('#school').html('');
+                    $('#school').append(_html);
+                    form.render();
+                });
+
                 $("#text").bind("input propertychange",function(event){
                     var _str = $('#text').val();
                     $('#content').show();

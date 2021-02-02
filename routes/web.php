@@ -22,6 +22,7 @@ Route::get('/auth_code','IndexController@getAuthCode');
 Route::post('/login','IndexController@login');
 Route::get('/get_specialty','IndexController@getSpecialty');
 Route::get('/get_school','IndexController@getSchool');
+Route::get('/admin/get_school_list','IndexController@getSchoolList');
 /** 后台 **/
 Route::get('/admin/index','Admin\controller\Index@index')->middleware('checkLogin');
 Route::get('/admin/user','Admin\controller\Index@user_list')->middleware('checkLogin');
@@ -53,6 +54,8 @@ Route::get('/admin/school_del','Admin\controller\Index@school_del')->middleware(
 
 Route::post('/admin/password_add_do','Admin\controller\Index@password_add_do')->middleware('checkLogin');
 Route::get('/admin/password_add','Admin\controller\Index@password_add')->middleware('checkLogin');
+
+
 
 
 Route::get('/admin/login','Admin\controller\Index@loginView')->name('login');

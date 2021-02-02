@@ -27,7 +27,7 @@ class School extends Model
         return [];
     }
 
-    public function getList($str = '',$page_size=20){
+    public function getList($str = '',$c_id = '',$page_size=20){
         $where = [];
         if($str){
             $where[] = ['name','like','%'.$str.'%'];
@@ -36,7 +36,20 @@ class School extends Model
         return $data;
     }
 
+    public function getInfo($c_id = ''){
+        $where = [];
+        if($c_id){
+            $where[] = ['c_id','=',$c_id];
+        }
+        $data  = $this->query()->where($where)->get();
+        return $data;
+    }
+
     public function add($data){
+        return $this->query()->insert($data);
+    }
+
+    public function adds($data){
         return $this->query()->insert($data);
     }
 
