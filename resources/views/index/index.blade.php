@@ -37,10 +37,10 @@
     <body>
         <div class="layui-fluid" style="background-color: #ffffff;margin-top: 250px;margin-left: 5%;width: 90%;border-radius:10px 10px;">
             <div class="layui-row">
-                <div style="text-align: center;width: 100%;font-size: 18px">请输入您的专科专业/专业代码</div>
+                <div style="text-align: center;width: 100%;font-size: 18px;margin-bottom: 20px">请输入您的专科专业/专业代码</div>
                 <form class="layui-form">
                   <div class="layui-form-item">
-                      <div class="layui-input-inline" style="width: 80%;padding-left: 10%;padding-top: 38px">
+                      <div class="layui-input-inline" style="width: 80%;padding-left: 10%;">
                           <input type="text" id="text" name="text" required="" lay-verify="required"
                           autocomplete="off" class="layui-input" style="height: 50px" placeholder="请输入专业全称/专业代码">
                       </div>
