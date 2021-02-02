@@ -37,7 +37,7 @@
     <body>
         <div class="layui-fluid" style="background-color: #ffffff;margin-top: 250px;margin-left: 5%;width: 85%;border-radius:10px 10px;">
             <div class="layui-row">
-                <div style="text-align: center;width: 100%;font-size: 28px">请输入您的专科专业/专业代码</div>
+                <div style="text-align: center;width: 100%;font-size: 23px">请输入您的专科专业/专业代码</div>
                 <form class="layui-form">
                   <div class="layui-form-item">
                       <div class="layui-input-inline" style="width: 80%;padding-left: 10%;padding-top: 38px">
@@ -64,7 +64,9 @@
                         <label class="layui-form-label"  style="width: 60px"><span class="x-red">*</span>城市</label>
                         <div class="layui-input-inline" style="width: 50%;">
                             <select name="class" lay-verify="required">
-                                <option value="一年级">一年级</option>
+                                @foreach($city_data as $k=>$v)
+                                <option value="{{$v['name']}}">{{$v['name']}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
