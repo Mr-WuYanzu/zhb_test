@@ -59,6 +59,7 @@
 
         <div class="layui-fluid" id="check" style="position:relative;top:-450px;border:solid 1px #1b1e21;background-color: #ffffff;margin-top: 250px;margin-left: 10%;width: 80%;border-radius:10px 10px;display: none">
             <div class="layui-row">
+                <div style="text-align: center;width: 100%;font-size: 18px;margin-bottom: 10px">信息验证</div>
                 <form class="layui-form">
                     <div class="layui-form-item" style="padding-left: 10%;padding-top: 20px">
                         <label class="layui-form-label"  style="width: 60px"><span class="x-red">*</span>城市</label>
