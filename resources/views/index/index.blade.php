@@ -22,7 +22,7 @@
             /*    background: url("/images/loadingpic44.png");*/
             /*}*/
 
-            html,body{height: 100%;width: 100%;}
+            html,body{height: 100%;width: 100%;min-height:800px}
             body{
                 background: url("{{$img}}") no-repeat;
                 width:100%;
